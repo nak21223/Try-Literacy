@@ -255,7 +255,7 @@
                         <div class="space-y-6">
                             <div class="flex items-center text-lg text-gray-700">
                                 <i data-lucide="mail" class="w-6 h-6 text-primary mr-3 flex-shrink-0"></i>
-                                <span class="font-medium">Tryliteracy.llc@outlook.com</span>
+                                <span class="font-medium">tryliteracy.ny@outlook.com</span>
                             </div>
                             
                             <button id="portal-open-button" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-accent/30 transition shadow-md w-full sm:w-auto">
@@ -313,4 +313,111 @@
     <footer class="bg-gray-900 text-white py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-xl font-bold mb-2">TRY Literacy, LLC</p>
-            <p class="text-gray-400 text-sm">© 2025 All rights reserved. Providing quality remote education since 2025.</
+            <p class="text-gray-400 text-sm">© 2025 All rights reserved. Providing quality remote education since 2025.</p>
+        </div>
+    </footer>
+
+    <div id="portal-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 shadow-2xl max-w-md w-full">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Student Portal Access</h3>
+            <p class="text-gray-700 mb-6">Enter your password to access Google Classroom.</p>
+            
+            <input type="password" id="portal-password-input" placeholder="Password" class="w-full border-gray-300 rounded-md shadow-sm p-3 border focus:ring-primary focus:border-primary mb-3">
+            
+            <p id="password-error" class="text-red-600 text-sm mb-4 hidden">Incorrect password. Please try again.</p>
+
+            <div class="flex justify-end space-x-3">
+                <button id="portal-access-button" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-blue-800 transition">
+                    Go to Classroom
+                </button>
+                <button id="portal-close-button" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // 1. Mobile Menu Toggling
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+
+        // 2. FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                faqContainer.addEventListener('click', (event) => {
+                    const toggle = event.target.closest('.faq-toggle');
+                    if (toggle) {
+                        const content = toggle.nextElementSibling;
+                        const icon = toggle.querySelector('i');
+                        
+                        // Close other open FAQ items
+                        document.querySelectorAll('.faq-content').forEach(item => {
+                            if (item !== content && !item.classList.contains('hidden')) {
+                                item.classList.add('hidden');
+                                item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                            }
+                        });
+
+                        // Toggle current item
+                        content.classList.toggle('hidden');
+                        icon.classList.toggle('rotate-180');
+                    }
+                });
+            }
+        });
+
+
+        // 3. Student Portal Access (Password Gate)
+        const portalOpenButton = document.getElementById('portal-open-button');
+        const portalCloseButton = document.getElementById('portal-close-button');
+        const portalAccessButton = document.getElementById('portal-access-button');
+        const portalModal = document.getElementById('portal-modal');
+        const passwordInput = document.getElementById('portal-password-input');
+        const passwordError = document.getElementById('password-error');
+
+        // CRITICAL: REPLACE WITH YOUR GOOGLE CLASSROOM INVITE LINK
+        const CLASSROOM_URL = "REPLACE_WITH_YOUR_GOOGLE_CLASSROOM_INVITE_LINK"; 
+
+        // CRITICAL: REPLACE "Literacy030608" with your desired password
+        const CORRECT_PASSWORD = "REPLACE_WITH_YOUR_NEW_PASSWORD"; 
+
+        // Open modal
+        portalOpenButton.addEventListener('click', () => {
+            portalModal.classList.remove('hidden');
+            passwordInput.value = ''; // Clear previous attempts
+            passwordError.classList.add('hidden'); // Hide error message
+        });
+
+        // Close modal
+        portalCloseButton.addEventListener('click', () => {
+            portalModal.classList.add('hidden');
+        });
+        
+        // Access button logic
+        portalAccessButton.addEventListener('click', () => {
+            const enteredPassword = passwordInput.value.trim();
+            if (enteredPassword === CORRECT_PASSWORD) {
+                // Success: open the Google Classroom link
+                window.open(CLASSROOM_URL, '_blank');
+                portalModal.classList.add('hidden');
+            } else {
+                // Failure: show error message
+                passwordError.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
