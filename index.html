@@ -1,471 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRY Literacy | Remote Remedial Instruction (Grades 3-8)</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Custom styles for a professional, focused look */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #1e293b; /* Slate-800 */
-        }
-        .bg-primary {
-            background-color: #1f2937; /* Dark Slate Gray for professional contrast */
-        }
-        .text-accent {
-            color: #0d9488; /* Teal-600 for the main brand accent */
-        }
-        .btn-primary {
-            background-color: #0d9488; /* Teal-600 */
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0f766e; /* Darker Teal */
-        }
-        .header-bg {
-            background-image: linear-gradient(to right bottom, rgba(13, 148, 136, 0.9), rgba(31, 41, 55, 0.8)), 
-                              url('https://placehold.co/1200x600/134e4a/ffffff?text=TRY+Literacy+Success');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRY Literacy | Remote Remedial Instruction (Grades 3-8)</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1D4ED8', // Tailwind blue-700 for a professional look
+                        'secondary': '#FEF3C7', // Tailwind amber-100 for highlights
+                        'accent': '#93C5FD', // Tailwind blue-300 for lighter elements
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="antialiased">
+<body class="bg-gray-50 font-sans text-gray-800">
 
-        <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                                <div class="flex-shrink-0">
-                    <a href="#" class="text-3xl font-extrabold text-accent tracking-tighter">
-                        TRY <span class="text-gray-900">Literacy</span>
-                    </a>
-                </div>
-                                <nav class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-accent font-medium transition">Our Mission</a>
-                    <a href="#services" class="text-gray-600 hover:text-accent font-medium transition">Services</a>
-                    <a href="#grades" class="text-gray-600 hover:text-accent font-medium transition">Target Grades</a>
-                    <a href="#faq" class="text-gray-600 hover:text-accent font-medium transition">FAQ</a>
-                    <a href="#contact" class="btn-primary px-4 py-2 rounded-lg text-white font-medium shadow-md hover:scale-105">Enroll Now</a>
-                </nav>
-                                <button id="mobile-menu-button" class="md:hidden text-gray-500 hover:text-accent p-2 rounded-md">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-                <div id="mobile-menu" class="hidden md:hidden bg-white shadow-xl">
-            <nav class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Our Mission</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Services</a>
-                <a href="#grades" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Target Grades</a>
-                <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">FAQ</a>
-                <a href="#contact" class="block w-full text-center px-3 py-2 rounded-md text-base font-medium text-white bg-accent hover:bg-teal-700">Enroll Now</a>
-            </nav>
-        </div>
-    </header>
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-primary">TRY Literacy</a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-primary transition">Our Mission</a>
+                    <a href="#services" class="text-gray-600 hover:text-primary transition">Services</a>
+                    <a href="#grades" class="text-gray-600 hover:text-primary transition">Target Grades</a>
+                    <a href="#faq" class="text-gray-600 hover:text-primary transition">FAQ</a>
+                    <a href="#contact" class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-800 transition">Enroll Now</a>
+                </div>
 
-    <main>
-                <section class="header-bg pt-20 pb-28 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
-                    Targeted Remote Tutoring for Foundational Skills
-                </h1>
-                <p class="text-xl sm:text-2xl font-light max-w-3xl mx-auto mb-10 text-indigo-100">
-                    TRY Literacy provides focused, one-on-one remedial instruction in **basic math** and **reading comprehension** for students in Grades 3 - 8.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#contact" class="btn-primary px-8 py-4 rounded-xl text-xl font-bold shadow-2xl transform hover:scale-105">
-                        Schedule a Free Consultation
-                    </a>
-                    <a href="#services" class="px-8 py-4 rounded-xl text-xl font-bold bg-white text-gray-900 shadow-xl transition hover:bg-gray-100 transform hover:scale-105">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-        </section>
+                <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </nav>
+        </div>
 
-                <section id="about" class="py-16 md:py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:text-center">
-                    <h2 class="text-base text-accent font-semibold tracking-wide uppercase">Our Mission</h2>
-                    <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
-                        Building Confidence, One Skill at a Time
-                    </p>
-                    <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                        We understand that gaps in foundational learning can hold a student back. TRY Literacy focuses exclusively on diagnosing and closing those gaps in a supportive, virtual environment. We give middle and elementary school students the tools they need to succeed in higher grades.
-                    </p>
-                </div>
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-                        <div class="text-center">
-                            <i data-lucide="monitor-check" class="w-12 h-12 text-accent mx-auto mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900">Dedicated Remote Focus</h3>
-                            <p class="mt-2 text-gray-600">All sessions are remote, ensuring flexibility and comfort for your child right at home.</p>
-                        </div>
-                        <div class="text-center">
-                            <i data-lucide="hand-coins" class="w-12 h-12 text-accent mx-auto mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900">Remedial Expertise</h3>
-                            <p class="mt-2 text-gray-600">Our instruction targets specific learning deficits, moving beyond simple homework help to true mastery.</p>
-                        </div>
-                        <div class="text-center">
-                            <i data-lucide="graduation-cap" class="w-12 h-12 text-accent mx-auto mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-900">Proven Results</h3>
-                            <p class="mt-2 text-gray-600">We aim for measurable growth in both basic math and critical reading comprehension skills.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-gray-100" onclick="closeMobileMenu()">Our Mission</a>
+            <a href="#services" class="block px-4 py-2 text-gray-600 hover:bg-gray-100" onclick="closeMobileMenu()">Services</a>
+            <a href="#grades" class="block px-4 py-2 text-gray-600 hover:bg-gray-100" onclick="closeMobileMenu()">Target Grades</a>
+            <a href="#faq" class="block px-4 py-2 text-gray-600 hover:bg-gray-100" onclick="closeMobileMenu()">FAQ</a>
+            <a href="#contact" class="block px-4 py-2 bg-primary text-white text-center hover:bg-blue-800" onclick="closeMobileMenu()">Enroll Now</a>
+        </div>
+    </header>
 
-                <section id="services" class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12 sm:text-4xl">
-                    Our Core Instruction Areas
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    
-                                        <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-teal-600">
-                        <i data-lucide="book-open-check" class="w-10 h-10 text-teal-600 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Reading Comprehension</h3>
-                        <p class="text-gray-600 mb-4">
-                            We help students move past decoding and focus on what they are reading. Skills taught include:
-                        </p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <i data-lucide="check" class="w-5 h-5 text-teal-600 mr-2 mt-1 flex-shrink-0"></i>
-                                Identifying the Main Idea and Supporting Details
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check" class="w-5 h-5 text-teal-600 mr-2 mt-1 flex-shrink-0"></i>
-                                Making Inferences and Predictions
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check" class="w-5 h-5 text-teal-600 mr-2 mt-1 flex-shrink-0"></i>
-                                Understanding Text Structure and Vocabulary in Context
-                            </li>
-                        </ul>
-                    </div>
+    <main>
+        <section class="bg-secondary/50 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    Targeted Remote Tutoring for Foundational Skills
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    TRY Literacy provides focused, one-on-one remedial instruction in **basic math** and **reading comprehension** for students in Grades 3 - 8.
+                </p>
+                <div class="space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition shadow-lg">
+                        Schedule a Free Consultation
+                    </a>
+                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-accent/30 transition shadow-md">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                                        <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-indigo-600">
-                        <i data-lucide="calculator" class="w-10 h-10 text-indigo-600 mb-4"></i>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Basic Math Skills</h3>
-                        <p class="text-gray-600 mb-4">
-                            We build confidence by strengthening the essential math building blocks necessary for Algebra and geometry:
-                        </p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-start">
-                                <i data-lucide="check" class="w-5 h-5 text-indigo-600 mr-2 mt-1 flex-shrink-0"></i>
-                                Mastery of Addition, Subtraction, Multiplication, and Division
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check" class="w-5 h-5 text-indigo-600 mr-2 mt-1 flex-shrink-0"></i>
-                                Fraction and Decimal Concepts
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check" class="w-5 h-5 text-indigo-600 mr-2 mt-1 flex-shrink-0"></i>
-                                Introduction to Pre-Algebraic Thinking and Problem Solving
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="mt-12 text-center">
-                    <a href="#contact" class="btn-primary px-6 py-3 rounded-xl text-lg font-semibold shadow-md transform hover:scale-[1.03]">
-                        Get Started with an Assessment
-                    </a>
-                </div>
-            </div>
-        </section>
+        <section id="about" class="py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-primary tracking-wide uppercase">Our Mission</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900">
+                        Building Confidence, One Skill at a Time
+                    </p>
+                    <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                        We understand that gaps in foundational learning can hold a student back. TRY Literacy focuses exclusively on diagnosing and closing those gaps in a supportive, virtual environment. We give middle and elementary school students the tools they need to succeed in higher grades.
+                    </p>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3 text-center">
+                    <div class="p-6 bg-white rounded-xl shadow-lg transition hover:shadow-xl">
+                        <i data-lucide="monitor" class="w-10 h-10 text-primary mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Dedicated Remote Focus</h3>
+                        <p class="text-gray-600">All sessions are remote, ensuring flexibility and comfort for your child right at home.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-lg transition hover:shadow-xl">
+                        <i data-lucide="book-open-text" class="w-10 h-10 text-primary mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Remedial Expertise</h3>
+                        <p class="text-gray-600">Our instruction targets specific learning deficits, moving beyond simple homework help to true mastery.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-lg transition hover:shadow-xl">
+                        <i data-lucide="trending-up" class="w-10 h-10 text-primary mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
+                        <p class="text-gray-600">We aim for measurable growth in both basic math and critical reading comprehension skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <section id="grades" class="py-16 md:py-24 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-4 sm:text-4xl">Who We Serve</h2>
-                <p class="text-xl text-gray-500 mb-10">
-                    TRY Literacy specializes in the critical developmental period when foundational skills determine future academic success.
-                </p>
-                <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
-                    
-                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg w-full md:w-1/2">
-                        <i data-lucide="school" class="w-10 h-10 text-accent mx-auto mb-4"></i>
-                        <p class="text-4xl font-extrabold text-gray-900 mb-2">Grades 3 - 5</p>
-                        <p class="text-gray-600">Focus on building strong basic math fact fluency and transitioning from "learning to read" to "reading to learn."</p>
-                    </div>
+        <section id="services" class="bg-accent/30 py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">Our Core Instruction Areas</h2>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="p-8 bg-white rounded-xl shadow-xl">
+                        <i data-lucide="glasses" class="w-10 h-10 text-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Reading Comprehension</h3>
+                        <p class="text-gray-700 mb-6">We help students move past decoding and focus on what they are reading. Skills taught include:</p>
+                        <ul class="space-y-3 text-gray-600 list-none">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Identifying the Main Idea and Supporting Details</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Making Inferences and Predictions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Understanding Text Structure and Vocabulary in Context</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-8 bg-white rounded-xl shadow-xl">
+                        <i data-lucide="calculator" class="w-10 h-10 text-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Basic Math Skills</h3>
+                        <p class="text-gray-700 mb-6">We build confidence by strengthening the essential math building blocks necessary for Algebra and geometry:</p>
+                        <ul class="space-y-3 text-gray-600 list-none">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Mastery of Addition, Subtraction, Multiplication, and Division</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Fraction and Decimal Concepts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span>Introduction to Pre-Algebraic Thinking and Problem Solving</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition shadow-lg">
+                        Get Started with an Assessment
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="grades" class="py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">Who We Serve</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                        TRY Literacy specializes in the critical developmental period when foundational skills determine future academic success.
+                    </p>
+                </div>
 
-                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg w-full md:w-1/2">
-                        <i data-lucide="library" class="w-10 h-10 text-accent mx-auto mb-4"></i>
-                        <p class="text-4xl font-extrabold text-gray-900 mb-2">Grades 6 - 8</p>
-                        <p class="text-gray-600">Emphasis on closing complex fraction/decimal gaps and developing critical thinking skills needed for middle school texts.</p>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="p-8 bg-white rounded-xl shadow-lg border-t-4 border-primary/70">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Grades 3 - 5</h3>
+                        <p class="text-gray-700">Focus on building strong basic math fact fluency and transitioning from "learning to read" to "reading to learn." We establish the core habits necessary for advanced learning.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl shadow-lg border-t-4 border-primary/70">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Grades 6 - 8</h3>
+                        <p class="text-gray-700">Emphasis on closing complex fraction/decimal gaps and developing critical thinking skills needed for middle school texts. We ensure students are ready for high school Algebra and literature.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                </div>
-            </div>
-        </section>
-        
-                <section id="faq" class="py-16 md:py-24 bg-gray-50">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12 sm:text-4xl">
-                    Common Questions
-                </h2>
+        <section id="faq" class="bg-secondary py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">Common Questions</h2>
+                </div>
+                
+                <div class="max-w-4xl mx-auto space-y-4" id="faq-container">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-medium text-left text-gray-900 hover:bg-gray-50 transition">
+                            <span>What grades do you tutor?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 text-gray-600 border-t border-gray-200 hidden">
+                            <p>We focus on foundational skills for students in **Grades 3 through 8** (elementary and middle school). Our instruction is designed specifically for students who need remedial support in core subjects.</p>
+                        </div>
+                    </div>
 
-                <div class="space-y-4">
-                                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button class="w-full p-5 text-left font-semibold text-lg text-gray-900 flex justify-between items-center transition duration-300 hover:bg-gray-100" data-faq-toggle="faq1">
-                            What grades do you tutor?
-                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden p-5 pt-0 text-gray-600 border-t border-gray-100" id="faq1">
-                            <p>We focus on foundational skills for students in **Grades 3 through 8** (elementary and middle school). Our instruction is designed specifically for students who need remedial support in core subjects.</p>
-                        </div>
-                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-medium text-left text-gray-900 hover:bg-gray-50 transition">
+                            <span>Are the sessions truly one-on-one?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 text-gray-600 border-t border-gray-200 hidden">
+                            <p>Yes, all tutoring sessions are **one-on-one and individual** (1:1). This allows us to provide completely personalized and targeted instruction based on your child's specific learning profile and skill gaps.</p>
+                        </div>
+                    </div>
 
-                                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button class="w-full p-5 text-left font-semibold text-lg text-gray-900 flex justify-between items-center transition duration-300 hover:bg-gray-100" data-faq-toggle="faq2">
-                            Are the sessions truly one-on-one?
-                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden p-5 pt-0 text-gray-600 border-t border-gray-100" id="faq2">
-                            <p>Yes, all tutoring sessions are **one-on-one and individual** (1:1). This allows us to provide completely personalized and targeted instruction based on your child's specific learning profile and skill gaps.</p>
-                        </div>
-                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-medium text-left text-gray-900 hover:bg-gray-50 transition">
+                            <span>What is your teaching philosophy?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 text-gray-600 border-t border-gray-200 hidden">
+                            <p>We use a **diagnostic and remedial approach**. This means we take time to pinpoint exactly where the learning gaps exist and then systematically teach the missing foundational skills, moving beyond simple homework help to build true mastery.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-medium text-left text-gray-900 hover:bg-gray-50 transition">
+                            <span>How long is each tutoring session?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 text-gray-600 border-t border-gray-200 hidden">
+                            <p>Standard sessions are **45 minutes** long. This duration is scientifically proven to be optimal for maintaining a student's focus and engagement, especially in a remote learning environment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 text-lg font-medium text-left text-gray-900 hover:bg-gray-50 transition">
+                            <span>How can I schedule a session for my child?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 text-gray-600 border-t border-gray-200 hidden">
+                            <p>Please fill out the **"Request a Call Back" form** below! We will contact you within one business day to discuss your child's needs and set up your initial consultation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button class="w-full p-5 text-left font-semibold text-lg text-gray-900 flex justify-between items-center transition duration-300 hover:bg-gray-100" data-faq-toggle="faq3">
-                            What is your teaching philosophy?
-                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden p-5 pt-0 text-gray-600 border-t border-gray-100" id="faq3">
-                            <p>We use a **diagnostic and remedial approach**. This means we take time to pinpoint exactly where the learning gaps exist and then systematically teach the missing foundational skills, moving beyond simple homework help to build true mastery.</p>
-                        </div>
-                    </div>
+        <section id="contact" class="py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+                    <div class="mb-10 lg:mb-0">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Ready to See the Difference?</h3>
+                        <p class="text-xl text-gray-600 mb-8">
+                            Schedule your free, no-obligation consultation today. Let's discuss your child's needs and how TRY Literacy can help.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center text-lg text-gray-700">
+                                <i data-lucide="mail" class="w-6 h-6 text-primary mr-3 flex-shrink-0"></i>
+                                <span class="font-medium">Tryliteracy.llc@outlook.com</span>
+                            </div>
+                            
+                            <button id="portal-open-button" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-accent/30 transition shadow-md w-full sm:w-auto">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 mr-2"></i>
+                                Student Portal / Google Classroom Access
+                            </button>
+                            
+                            <div class="flex items-center text-lg text-gray-700">
+                                <i data-lucide="monitor" class="w-6 h-6 text-primary mr-3 flex-shrink-0"></i>
+                                <span>100% Remote & Virtual Services</span>
+                            </div>
+                        </div>
+                    </div>
 
-                                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button class="w-full p-5 text-left font-semibold text-lg text-gray-900 flex justify-between items-center transition duration-300 hover:bg-gray-100" data-faq-toggle="faq4">
-                            How long is each tutoring session?
-                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden p-5 pt-0 text-gray-600 border-t border-gray-100" id="faq4">
-                            <p>Standard sessions are **45 minutes** long. This duration is scientifically proven to be optimal for maintaining a student's focus and engagement, especially in a remote learning environment.</p>
-                        </div>
-                    </div>
+                    <div class="p-8 bg-white rounded-xl shadow-xl border-t-4 border-primary">
+                        <h4 class="text-2xl font-semibold text-gray-900 mb-6">Request a Call Back</h4>
+                        
+                        <form action="REPLACE_WITH_YOUR_FORMSPREE_ENDPOINT" method="POST" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Parent/Guardian Name</label>
+                                <input type="text" name="name" id="name" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:ring-primary focus:border-primary">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" name="_replyto" id="email" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:ring-primary focus:border-primary">
+                            </div>
 
-                                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <button class="w-full p-5 text-left font-semibold text-lg text-gray-900 flex justify-between items-center transition duration-300 hover:bg-gray-100" data-faq-toggle="faq5">
-                            How can I schedule a session for my child?
-                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden p-5 pt-0 text-gray-600 border-t border-gray-100" id="faq5">
-                            <p>Please fill out the **"Request a Call Back" form** below! We will contact you within one business day to discuss your child's needs and set up your initial consultation.</p>
-                        </div>
-                    </div>
+                            <div>
+                                <label for="grade" class="block text-sm font-medium text-gray-700">Child's Grade Level (3-8)</label>
+                                <input type="number" name="grade" id="grade" min="3" max="8" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:ring-primary focus:border-primary">
+                            </div>
+                            
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-gray-700">Area of Interest</label>
+                                <select id="interest" name="area_of_interest" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border bg-white focus:ring-primary focus:border-primary">
+                                    <option>Reading Comprehension</option>
+                                    <option>Basic Math Skills</option>
+                                    <option>Both Reading & Math</option>
+                                    <option>General Inquiry</option>
+                                </select>
+                            </div>
 
-                </div>
-            </div>
-        </section>
+                            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <section id="contact" class="py-16 md:py-24 bg-primary text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-                                        <div class="mb-10 lg:mb-0">
-                        <h3 class="text-4xl font-extrabold mb-4">
-                            Ready to See the Difference?
-                        </h3>
-                        <p class="text-indigo-200 text-lg mb-6">
-                            Schedule your free, no-obligation consultation today. Let's discuss your child's needs and how TRY Literacy can help.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="mail" class="w-6 h-6 text-teal-300"></i>
-                                                                <span class="font-medium">Tryliteracy.llc@outlook.com</span>
-                            </div>
-                                                                                    <div class="flex items-center space-x-3">
-                                <i data-lucide="graduation-cap" class="w-6 h-6 text-teal-300"></i>
-                                                                <a href="#" id="classroom-link" class="font-bold text-teal-300 hover:text-white transition underline">
-                                    Student Portal / Google Classroom Access
-                                </a>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="map-pin" class="w-6 h-6 text-teal-300"></i>
-                                <span class="font-medium">100% Remote & Virtual Services</span>
-                            </div>
-                        </div>
-                    </div>
+    </main>
 
-                                        <div class="bg-white p-8 rounded-xl shadow-2xl">
-                        <h4 class="text-2xl font-bold text-gray-900 mb-6">Request a Call Back</h4>
-                                                <form action="https://formspree.io/f/xyznkvzl" 
-                              method="post" 
-                              class="space-y-4">
-                            <div>
-                                <label for="parentName" class="block text-sm font-medium text-gray-700">Parent/Guardian Name</label>
-                                <input type="text" id="parentName" name="1_Parent_Name" required
-                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                                <input type="email" id="email" name="2_Email_Address" required
-                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900">
-                            </div>
-                            <div>
-                                <label for="grade" class="block text-sm font-medium text-gray-700">Child's Grade Level (3-8)</label>
-                                <input type="number" id="grade" name="3_Childs_Grade" min="3" max="8" required
-                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900">
-                            </div>
-                            <div>
-                                <label for="interest" class="block text-sm font-medium text-gray-700">Area of Interest</label>
-                                <textarea id="interest" name="4_Area_of_Interest" rows="3"
-                                          class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
-                                          placeholder="e.g., Struggling with fractions, needs help with comprehension...">
-                                </textarea>
-                            </div>
-                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-lg text-lg font-medium text-white bg-teal-600 hover:bg-teal-700 transition duration-300 transform hover:scale-[1.02]">
-                                Submit Request
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-        <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg font-semibold mb-2">TRY Literacy, LLC</p>
-            <p class="text-sm text-gray-400">&copy; 2025 All rights reserved. Providing quality remote education since 2025.</p>
-        </div>
-    </footer>
-
-        <div id="password-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center p-4" aria-modal="true" role="dialog">
-        <div class="bg-white rounded-xl p-8 max-w-sm w-full shadow-2xl">
-            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                <i data-lucide="lock" class="w-6 h-6 text-accent mr-3"></i>
-                Student Portal Access
-            </h3>
-            <p class="text-gray-600 mb-6">Enter your password to access Google Classroom.</p>
-            
-            <input type="password" id="password-input" placeholder="Enter password here" 
-                   class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent text-gray-900 mb-4">
-            
-            <p id="password-error" class="text-red-500 text-sm mb-4 hidden">Incorrect password. Please try again.</p>
-
-            <div class="flex space-x-3">
-                <button id="submit-password" class="flex-1 py-3 px-4 rounded-xl text-white bg-teal-600 hover:bg-teal-700 transition duration-300 font-semibold">
-                    Go to Classroom
-                </button>
-                <button id="cancel-password" class="py-3 px-4 rounded-xl text-gray-700 bg-gray-200 hover:bg-gray-300 transition duration-300 font-semibold">
-                    Cancel
-                </button>
-            </div>
-        </div>
-    </div>
-
-        <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-
-        // Mobile Menu Toggle
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // FAQ Accordion Logic
-        document.querySelectorAll('[data-faq-toggle]').forEach(button => {
-            button.addEventListener('click', () => {
-                const targetId = button.getAttribute('data-faq-toggle');
-                const content = document.getElementById(targetId);
-                const icon = button.querySelector('i[data-lucide="chevron-down"]');
-
-                if (content.classList.contains('hidden')) {
-                    // Hide all other open FAQs
-                    document.querySelectorAll('.faq-content').forEach(c => {
-                        if (c !== content && !c.classList.contains('hidden')) {
-                            c.classList.add('hidden');
-                            // Reset icon rotation for others
-                            const otherButton = document.querySelector(`[data-faq-toggle="${c.id}"]`);
-                            const otherIcon = otherButton.querySelector('i[data-lucide="chevron-down"]');
-                            otherIcon.classList.remove('rotate-180');
-                        }
-                    });
-
-                    // Show the clicked FAQ
-                    content.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                } else {
-                    // Hide the clicked FAQ
-                    content.classList.add('hidden');
-                    icon.classList.remove('rotate-180');
-                }
-            });
-        });
-        
-        // --- Custom Password Modal Logic (Replaces alert/prompt) ---
-        const passwordModal = document.getElementById('password-modal');
-        const passwordInput = document.getElementById('password-input');
-        const submitButton = document.getElementById('submit-password');
-        const cancelButton = document.getElementById('cancel-password');
-        const errorDisplay = document.getElementById('password-error');
-        const classroomLink = document.getElementById('classroom-link');
-
-        /* * =========================================================================
-         * IMPORTANT: CHANGE THESE TWO VALUES IMMEDIATELY
-         * =========================================================================
-         */
-        // The URL is correct:
-        const CLASSROOM_URL = "https://classroom.google.com/c/NzEwOTUwNTgyODg3?cjc=n5ey545"; 
-        
-        // <<< CRITICAL: REPLACE "literacy123" with your desired password
-        const CORRECT_PASSWORD = "Literacy030608";           
-        
-        // Function to show the modal
-        function showPasswordModal(event) {
-            // Stop the default link action (navigating to '#')
-            event.preventDefault(); 
-            passwordModal.classList.remove('hidden');
-            passwordInput.focus();
-        }
-        
-        // Function to hide the modal and clear input/errors
-        function hidePasswordModal() {
-            passwordModal.classList.add('hidden');
-            passwordInput.value = '';
-            errorDisplay.classList.add('hidden');
-        }
-
-        // Function to handle password submission
-        function handlePasswordSubmit() {
-            const enteredPassword = passwordInput.value.trim();
-
-            if (enteredPassword === CORRECT_PASSWORD) {
-                hidePasswordModal();
-                // Open the classroom link in a new tab
-                window.open(CLASSROOM_URL, '_blank');
-            } else {
-                errorDisplay.classList.remove('hidden');
-                passwordInput.value = ''; // Clear input on failure
-                passwordInput.focus();
-            }
-        }
-
-        // Attach event listeners
-        if (classroomLink) {
-            classroomLink.addEventListener('click', showPasswordModal);
-        }
-        submitButton.addEventListener('click', handlePasswordSubmit);
-        cancelButton.addEventListener('click', hidePasswordModal);
-        
-        // Allow pressing Enter key to submit
-        passwordInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                handlePasswordSubmit();
-            }
-        });
-    </script>
-</body>
-</html>
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-xl font-bold mb-2">TRY Literacy, LLC</p>
+            <p class="text-gray-400 text-sm">© 2025 All rights reserved. Providing quality remote education since 2025.</
