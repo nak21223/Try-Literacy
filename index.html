@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRY Literacy | Remote Remedial Instruction (Grades 3-8)</title>
+  <title>TRY Literacy | Remote Remedial Instruction (Grades 3–8)</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,7 +13,7 @@
       theme: {
         extend: {
           colors: {
-            'primary': '#1D4ED8', 
+            'primary': '#1D4ED8',
             'secondary': '#FEF3C7',
             'accent': '#93C5FD',
           }
@@ -29,7 +29,7 @@
   <header class="sticky top-0 z-50 bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <nav class="flex justify-between items-center py-4">
-        <a href="#" class="text-2xl font-bold text-primary">TRY Literacy</a>
+        <a href="#home" class="text-2xl font-bold text-primary">TRY Literacy</a>
         
         <div class="hidden md:flex space-x-8">
           <a href="#about" class="text-gray-600 hover:text-primary transition">Our Mission</a>
@@ -55,9 +55,9 @@
   </header>
 
   <!-- Main Content -->
-  <main>
+  <main id="home">
 
-    <!-- TRY Literacy Hero Section -->
+    <!-- Hero Section -->
     <section class="bg-[#f5f0e6] text-gray-900 py-24 text-center">
       <div class="max-w-4xl mx-auto px-4">
         <h1 class="text-4xl sm:text-5xl font-extrabold mb-6">
@@ -69,37 +69,92 @@
         <p class="italic text-gray-800 font-medium mb-10">
           Where Literacy Meets Motivation.
         </p>
-        <a href="mailto:tryliteracy.ny@outlook.com?subject=Tutoring%20Inquiry" 
-           class="inline-block bg-primary text-white px-8 py-3 rounded-md text-lg font-semibold shadow-md hover:bg-blue-800 transition">
-          Join the Movement
+        <a href="#about" class="inline-block bg-primary text-white px-8 py-3 rounded-md text-lg font-semibold shadow-md hover:bg-blue-800 transition">
+          Learn More
         </a>
       </div>
     </section>
 
-    <!-- Existing Sections Continue Below -->
-    <section class="bg-secondary/50 py-20">
+    <!-- Our Mission -->
+    <section id="about" class="bg-secondary/50 py-20 scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
-          Targeted Remote Tutoring for Foundational Skills
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          TRY Literacy provides focused, one-on-one remedial instruction in <strong>basic math</strong> and <strong>reading comprehension</strong> for students in Grades 3–8.
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">Our Mission</h2>
+        <p class="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
+          TRY Literacy provides one-on-one remedial instruction in <strong>reading comprehension</strong> and <strong>basic math</strong> for students in Grades 3–8. 
+          We help learners rebuild foundational skills, confidence, and intrinsic motivation.
         </p>
-        <div class="space-y-4 sm:space-y-0 sm:space-x-4">
-          <a href="mailto:tryliteracy.ny@outlook.com?subject=Request%20for%20Consultation" 
-             class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition shadow-lg">
-            Schedule a Free Consultation
-          </a>
-          <a href="#services" 
-             class="inline-flex items-center justify-center px-8 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-accent/30 transition shadow-md">
-            Learn More
-          </a>
+        <a href="#services" class="inline-flex items-center justify-center px-8 py-3 bg-primary text-white rounded-md font-medium shadow-md hover:bg-blue-800 transition">
+          Explore Our Services
+        </a>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="bg-accent/30 py-20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">Our Core Instruction Areas</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div class="p-8 bg-white rounded-xl shadow-xl">
+            <i data-lucide="book-open-text" class="w-10 h-10 text-primary mb-4 mx-auto"></i>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Reading Comprehension</h3>
+            <ul class="text-left space-y-3 text-gray-700">
+              <li>Identifying the Main Idea and Supporting Details</li>
+              <li>Making Inferences and Predictions</li>
+              <li>Understanding Vocabulary in Context</li>
+            </ul>
+          </div>
+
+          <div class="p-8 bg-white rounded-xl shadow-xl">
+            <i data-lucide="calculator" class="w-10 h-10 text-primary mb-4 mx-auto"></i>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Basic Math Skills</h3>
+            <ul class="text-left space-y-3 text-gray-700">
+              <li>Mastery of Operations (Addition through Division)</li>
+              <li>Fractions, Decimals, and Percent Concepts</li>
+              <li>Problem-Solving and Pre-Algebraic Thinking</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- (Your existing sections such as #about, #services, #grades, etc., remain unchanged below) -->
-    
+    <!-- Target Grades -->
+    <section id="grades" class="py-20 bg-white scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">Who We Serve</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="p-8 bg-gray-50 rounded-xl shadow-lg border-t-4 border-primary/70">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Grades 3–5</h3>
+            <p class="text-gray-700">Developing strong reading fluency and math foundations to prepare for upper elementary learning success.</p>
+          </div>
+          <div class="p-8 bg-gray-50 rounded-xl shadow-lg border-t-4 border-primary/70">
+            <h3 class="text-2xl font-bold text-gray-900 mb-3">Grades 6–8</h3>
+            <p class="text-gray-700">Filling gaps in comprehension and math reasoning to ensure readiness for high school-level courses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-secondary py-20 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-8">Common Questions</h2>
+        <div id="faq-container" class="max-w-3xl mx-auto space-y-4 text-left">
+          <div class="bg-white p-5 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">What grades do you tutor?</h3>
+            <p class="text-gray-600">TRY Literacy focuses on students in Grades 3–8 who need remedial support in reading and math.</p>
+          </div>
+          <div class="bg-white p-5 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">Are sessions one-on-one?</h3>
+            <p class="text-gray-600">Yes! Every tutoring session is individualized and customized for your child’s specific learning needs.</p>
+          </div>
+          <div class="bg-white p-5 rounded-lg shadow">
+            <h3 class="text-xl font-semibold mb-2">How long are sessions?</h3>
+            <p class="text-gray-600">Standard sessions are 45 minutes—perfect for maintaining focus and engagement online.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -110,84 +165,34 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Script -->
   <script>
+    // Mobile Menu
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
+    menuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
 
-    function closeMobileMenu() {
-      mobileMenu.classList.add('hidden');
-    }
-
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
+    // Scroll and FAQ
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
+
+      const headerOffset = 80;
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            closeMobileMenu();
+          }
+        });
+      });
     });
   </script>
-<script>
-  // 1. Mobile Menu Toggle
-  const menuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  
-  function closeMobileMenu() {
-    mobileMenu.classList.add('hidden');
-  }
-
-  menuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // 2. FAQ Accordion
-  document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
-
-    const faqContainer = document.getElementById('faq-container');
-    if (faqContainer) {
-      faqContainer.addEventListener('click', (event) => {
-        const toggle = event.target.closest('.faq-toggle');
-        if (toggle) {
-          const content = toggle.nextElementSibling;
-          const icon = toggle.querySelector('i');
-          
-          // Close other open FAQ items
-          document.querySelectorAll('.faq-content').forEach(item => {
-            if (item !== content && !item.classList.contains('hidden')) {
-              item.classList.add('hidden');
-              item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
-            }
-          });
-
-          // Toggle current item
-          content.classList.toggle('hidden');
-          icon.classList.toggle('rotate-180');
-        }
-      });
-    }
-
-    // 3. Smooth Scroll Offset Fix (for sticky header)
-    const headerOffset = 80; // adjust for your header height
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-          closeMobileMenu(); // close mobile nav after click
-        }
-      });
-    });
-  });
-</script>
-
 
 </body>
 </html>
