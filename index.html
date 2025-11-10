@@ -127,6 +127,67 @@
       lucide.createIcons();
     });
   </script>
+<script>
+  // 1. Mobile Menu Toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+  }
+
+  menuButton.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // 2. FAQ Accordion
+  document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+
+    const faqContainer = document.getElementById('faq-container');
+    if (faqContainer) {
+      faqContainer.addEventListener('click', (event) => {
+        const toggle = event.target.closest('.faq-toggle');
+        if (toggle) {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector('i');
+          
+          // Close other open FAQ items
+          document.querySelectorAll('.faq-content').forEach(item => {
+            if (item !== content && !item.classList.contains('hidden')) {
+              item.classList.add('hidden');
+              item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+            }
+          });
+
+          // Toggle current item
+          content.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        }
+      });
+    }
+
+    // 3. Smooth Scroll Offset Fix (for sticky header)
+    const headerOffset = 80; // adjust for your header height
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+          closeMobileMenu(); // close mobile nav after click
+        }
+      });
+    });
+  });
+</script>
+
 
 </body>
 </html>
